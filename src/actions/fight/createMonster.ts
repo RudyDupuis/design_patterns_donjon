@@ -23,8 +23,8 @@ export default function createMonster(): Monster {
     const itemBuilder = new ItemBuilder();
     itemBuilder.name(ITEM_NAMES[Math.floor(Math.random() * ITEM_NAMES.length)]);
     itemBuilder.adjective("monstrueux");
-    itemBuilder.size("moyen");
-    itemBuilder.weight("leger");
+    itemBuilder.adjective2("moyen");
+    itemBuilder.adjective3("leger");
     const lootItem = itemBuilder.build();
     monster = new LootableMonster(monster, lootItem);
   }

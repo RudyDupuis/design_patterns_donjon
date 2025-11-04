@@ -8,8 +8,8 @@ export default class ItemBuilder {
     return new ItemEntity(
       this.item.name || "",
       this.item.adjective || "",
-      this.item.size || "",
-      this.item.weight || ""
+      this.item.adjective2 || "",
+      this.item.adjective3 || ""
     );
   }
 
@@ -21,12 +21,12 @@ export default class ItemBuilder {
     this.item.adjective = adjective;
     return this;
   }
-  size(size: string): ItemBuilder {
-    this.item.size = size;
+  adjective2(size: string): ItemBuilder {
+    this.item.adjective2 = size;
     return this;
   }
-  weight(weight: string): ItemBuilder {
-    this.item.weight = weight;
+  adjective3(weight: string): ItemBuilder {
+    this.item.adjective3 = weight;
     return this;
   }
 }

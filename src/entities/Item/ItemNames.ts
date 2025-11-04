@@ -71,7 +71,7 @@ export const ITEM_NAMES = [
   "Sablier",
   "Chandelier",
   "Encensoir",
-  "Chaîne",
+  "Chaine",
   "Menottes",
   "Piege",
   "Banniere",

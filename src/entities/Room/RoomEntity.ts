@@ -15,7 +15,7 @@ export default class RoomEntity implements Room {
 
   displayInfo(): void {
     console.log(
-      `🚪 Vous etes dans la ${this.name} avec ${this.nbDoors} porte(s).\n`
+      `◻️ Vous etes dans la ${this.name} avec ${this.nbDoors} porte(s).\n`
     );
   }
 }

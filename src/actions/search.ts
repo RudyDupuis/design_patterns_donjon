@@ -3,15 +3,16 @@ import { ITEM_NAMES } from "../entities/Item/ItemNames";
 import ItemBuilder from "../entities/Item/ItemBuilder";
 import InventorySingleton from "../entities/Inventory/InventorySingleton";
 import Room from "../entities/Room/Room";
+import { ITEM_ADJECTIVES } from "../entities/Item/ItemAdjectives";
 
 export default function search(currentRoom: Room): void {
   if (currentRoom.nbItems === 0) {
-    console.log("👎 Vous n'avez trouve aucun item dans cette piece.\n");
+    console.log("Vous n'avez trouve aucun item dans cette piece.\n");
     return;
   }
 
   const foundItem = ITEM_NAMES[Math.floor(Math.random() * ITEM_NAMES.length)];
-  console.log(`💍 Vous avez trouve un(e) ${foundItem}!\n`);
+  console.log(`◻️ Vous avez trouve un(e) ${foundItem}!\n`);
   currentRoom.nbItems -= 1;
 
   const itemBuilder = new ItemBuilder();
@@ -23,17 +24,12 @@ export default function search(currentRoom: Room): void {
   console.log("\n");
   itemBuilder.adjective(adjective);
 
-  const size = readlineSync.question(
-    `De quelle taille est l'item ${foundItem}: `
+  itemBuilder.adjective2(
+    ITEM_ADJECTIVES[Math.floor(Math.random() * ITEM_ADJECTIVES.length)]
   );
-  console.log("\n");
-  itemBuilder.size(size);
-
-  const weight = readlineSync.question(
-    `De quel poids est l'item ${foundItem}: `
+  itemBuilder.adjective3(
+    ITEM_ADJECTIVES[Math.floor(Math.random() * ITEM_ADJECTIVES.length)]
   );
-  console.log("\n");
-  itemBuilder.weight(weight);
 
   const item = itemBuilder.build();
   const inventory = InventorySingleton.getInstance();
