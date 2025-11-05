@@ -7,16 +7,16 @@ import fightFacade from "./actions/fight/fightFacade";
 
 console.log("Vous entrez dans le donjon sombre et dangereux...\n");
 console.log(
-  "Votre objectif est de survivre et de collecter 10 objets precieux... Bon courage !\n"
+  "Votre objectif est de survivre et de collecter 15 objets precieux... Bon courage !\n"
 );
 
 let currentRoom = RoomFactory.getInitialRoom();
 let gameOver = false;
 
 while (!gameOver) {
-  if (InventorySingleton.getInstance().items.length >= 10) {
+  if (InventorySingleton.getInstance().items.length >= 15) {
     console.log(
-      "Felicitation! Vous avez collecte 10 objets precieux et avez reussi a sortir du donjon en vie!\n"
+      "Felicitation! Vous avez collecte 15 objets precieux et avez reussi a sortir du donjon en vie!\n"
     );
     process.exit(0);
   }
